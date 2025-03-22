@@ -34,13 +34,13 @@ namespace Talabat.APIs
             // StoreContextDB
             WebApplicationBuilder.Services.AddDbContext<StoreContext>(options =>
             {
-                options/*.UseLazyLoadingProxies()*/.UseSqlServer(WebApplicationBuilder.Configuration.GetConnectionString("DefaultConnection"));
+                options/*.UseLazyLoadingProxies()*/.UseSqlServer(WebApplicationBuilder.Configuration.GetConnectionString("ServerDefaultConnection"));
             });
 
             // IdentityDbContext
             WebApplicationBuilder.Services.AddDbContext<AppIdentityDbContext>(optionsBuilder =>
             {
-                optionsBuilder.UseSqlServer(WebApplicationBuilder.Configuration.GetConnectionString("IdentityConnection"));
+                optionsBuilder.UseSqlServer(WebApplicationBuilder.Configuration.GetConnectionString("ServerIdentityConnection"));
             });
 
             // RedisDB
